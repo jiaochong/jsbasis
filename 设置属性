@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+body{
+	width:1200px;
+	height:800px;}
+ul,li{
+	list-style-type:none;
+	float:left;
+	margin:5px;}
+#red{
+	width:30px;
+	height:30px;
+	background:#f00;
+	text-align:center;
+	line-height:30px;
+	color:#fff;}
+#green{
+	width:30px;
+	height:30px;
+	background:#0F0;
+	text-align:center;
+	line-height:30px;
+	color:#fff;}
+#blue{
+	width:30px;
+	height:30px;
+	background:#00F;
+	text-align:center;
+	line-height:30px;
+	color:#fff;}
+.widthheight{
+	width:30px;
+	height:30px;
+	background:#efefef;
+	border:solid 1px #c0c0c0;
+	text-align:center;
+	line-height:30px;
+	color:#000;}
+#title{
+	font-size:24px;
+	font-weight:bold;
+	color:#000;
+	float:left;}
+#btn_set{
+	width:100px;
+	height:30px;
+	background:#f00;
+	float:left;
+	text-align:center;
+	line-height:30px;
+	font-size:14px;}
+#tdiv{
+	width:100px;
+	height:100px;
+	border:solid 2px #000;
+	position:absolute;
+	top:40px;}
+#popup{
+	width:400px;
+	height:220px;
+	background:#fff;
+	border:solid 10px #999999;
+	position:relative;
+	left:420px;
+	top:80px;
+	display:none;}
+.hq{
+	width:40px;
+	height:20px;
+	background:#06F;
+	color:#fff;
+	text-align:center;
+	line-height:20px;}
+.hq:hover a{
+	background:#00F;
+	display:block;}
+</style>
+
+<script>
+window.onload=function()
+{
+	var oSet=document.getElementById('btn_set');
+	var oTdiv=document.getElementById('tdiv');
+	var oPopup=document.getElementById('popup');
+	var oRed=document.getElementById('red');
+	var oGreen=document.getElementById('green');	
+	var oBlue=document.getElementById('blue');
+	
+	var oW200=document.getElementById('w200');
+	var oW300=document.getElementById('w300');
+	var oW400=document.getElementById('w400');
+	
+	var oH200=document.getElementById('h200');
+	var oH300=document.getElementById('h300');
+	var oH400=document.getElementById('h400');
+	
+	var oEsc=document.getElementById('btn_esc');
+	var oComfirm=document.getElementById('btn_confirm');		
+//颜色修改
+	oSet.onclick=function()
+	{
+		oPopup.style.display='block';
+	};
+	
+	oRed.onclick=function()
+	{
+		oTdiv.style.background='#f00';
+	};
+	
+	oGreen.onclick=function()
+	{
+		oTdiv.style.background='#0f0';	
+	};
+	
+	oBlue.onclick=function()
+	{
+		oTdiv.style.background='#00f';	
+	};
+	//宽
+	oW200.onclick=function()
+	{
+		oTdiv.style.width='200px';	
+	};
+	oW300.onclick=function()
+	{
+		oTdiv.style.width='300px';	
+	};
+	oW400.onclick=function()
+	{
+		oTdiv.style.width='400px';	
+	};
+	//高
+	oH200.onclick=function()
+	{
+		oTdiv.style.height='200px';	
+	};
+	oH300.onclick=function()
+	{
+		oTdiv.style.height='300px';	
+	};
+	oH400.onclick=function()
+	{
+		oTdiv.style.height='400px';	
+	};
+	
+	
+	oEsc.onclick=function()
+	{
+		oTdiv.style.background='#fff';
+		oTdiv.style.width='100px';
+		oTdiv.style.height='100px';			
+	};
+	
+oComfirm.onclick=function()
+	{
+		oPopup.style.display='none';		
+	};
+};
+</script>
+</head>
+
+<body>
+
+<div id="title">请为下面的div设置样式:</div>
+<div id="btn_set">点击设置</div>
+
+<div id="tdiv"></div>
+
+<div id="popup">
+	<ul>
+    	<li>请选择背景色:</li>
+    	<li id="red">红</li>
+        <li id="green">绿</li>
+        <li id="blue">蓝</li>
+    </ul>
+    
+    <ul>
+    	<li>请选择宽(px):</li>
+    	<li class="widthheight" id="w200">200</li>
+        <li class="widthheight" id="w300">300</li>
+        <li class="widthheight" id="w400">400</li>
+    </ul>
+    
+    <ul>
+    	<li>请选择高(px):</li>
+    	<li class="widthheight" id="h200">200</li>
+        <li class="widthheight" id="h300">300</li>
+        <li class="widthheight" id="h400">400</li>
+    </ul>
+    
+    <ul>
+    	<li id="btn_esc" class="hq"><a>恢复</a></li>
+        <li id="btn_confirm" class="hq"><a>确定</a></li>
+    </ul>
+</div>
+
+
+</body>
+</html>
